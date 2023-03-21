@@ -31,10 +31,11 @@ Write-Host "       .:'......     ......              'o:.....   .............  .
 Write-Host "      ..;;,'...........';:'.             ,ol,...''.................';:,..             ..;:;'...........';:,..      "
 Write-Host "   .',,:odxdc,.......,cdxdc;,'..        .;c;,:lodxdc;'..........,:oxxdl;,,'..      .',,:odxdl,.......,cdkxl;,,..   "
 Write-Host "..,:;;;lkO0Okdc.   .:dkOOOd:,;;;'      .;:;;;okO000Oxoc.      'ldkOOOOkc,;;::;,..  ';;;cxO00kxl.   .;dkOOOx:,;;:;'."
-
+Write-Host "                                                                                      "
 Write-Host "                                    _  _ ____ _       ___ ____ _  _ ____ _ ____ ___   " 
 Write-Host "                                    |  | |__/ |        |  |  | |  | |__/ | [__   |    " 
 Write-Host "                                    |__| |  \ |___     |  |__| |__| |  \ | ___]  |    "
+
 $date = Get-Date -Format "yyyyMMdd_HHmmss"
 $CommonLogFile = "log_$date.txt"
 $inputFile = Read-Host -Prompt 'Enter the input file path or press Enter to use the default (links.txt)'
@@ -55,8 +56,6 @@ function Write-Log {
     Add-Content -Path $LogPath -Value $Message
     Write-Host $Message
 }
-
-
 
 if ([string]::IsNullOrEmpty($inputFile)) {
     $inputFile = "links.txt"
