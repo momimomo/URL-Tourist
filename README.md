@@ -26,7 +26,7 @@
 
 # URL Tourist
 
-## It's a Powershell script for checking a list of URLs in search of a regex pattern.
+## It's a Powershell script for checking a list of URLs for a regex pattern match.
 
 ### Info 
 
@@ -37,8 +37,8 @@ and the links to check on the following lines. Modify the script contents as nee
 
 It will try to spawn one job with one attempt to visit the url for each link.
 
-Feel free to suggest any new features that might be helpful in no-library URL regex search.
+Feel free to suggest any new points on the feature list that might be helpful in 0-dependency URL regex search.
 
-TBD:
-[ ] Nice, animated progress bar that will support working with async jobs
-[ ] Headless, async HTML parsing with no browser, and not the SSR variant only
+Feature list:
+- [ ] Nice, animated progress bar that will support working with async jobs
+- [ ] Headless, async HTML parsing with no browser, and not the SSR variant only
