@@ -35,6 +35,7 @@ Write-Host "                                                                    
 Write-Host "                                    _  _ ____ _       ___ ____ _  _ ____ _ ____ ___   " 
 Write-Host "                                    |  | |__/ |        |  |  | |  | |__/ | [__   |    " 
 Write-Host "                                    |__| |  \ |___     |  |__| |__| |  \ | ___]  |    "
+Write-Host "                                                                                      "
 
 $date = Get-Date -Format "yyyyMMdd_HHmmss"
 $CommonLogFile = "log_$date.txt"
