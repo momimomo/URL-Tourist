@@ -37,12 +37,13 @@ Write-Host "                                    |  | |__/ |        |  |  | |  | 
 Write-Host "                                    |__| |  \ |___     |  |__| |__| |  \ | ___]  |    "
 $date = Get-Date -Format "yyyyMMdd_HHmmss"
 $CommonLogFile = "log_$date.txt"
+$inputFile = Read-Host -Prompt 'Enter the input file path or press Enter to use the default (links.txt)'
+Write-Host "The first line in links.txt should contain the regex pattern."
 
 function Test-IsUrl {
     param(
         [string]$Url
     )
-
     return ([Uri]::IsWellFormedUriString($Url, [UriKind]::Absolute))
 }
 
@@ -51,13 +52,11 @@ function Write-Log {
         [string]$Message,
         [string]$LogPath
     )
-
     Add-Content -Path $LogPath -Value $Message
     Write-Host $Message
 }
 
-$inputFile = Read-Host -Prompt 'Enter the input file path or press Enter to use the default (links.txt)'
-Write-Host "The first line in links.txt should contain the regex pattern."
+
 
 if ([string]::IsNullOrEmpty($inputFile)) {
     $inputFile = "links.txt"
@@ -71,20 +70,17 @@ if (-not (Test-Path $inputFile)) {
 $lines = Get-Content $inputFile
 $jobs = @()
 $lineNumber = 0
-
 $logMessages = @()
 $pattern = 'default'
 
 foreach ($line in $lines) {
     $lineNumber++
     if ([string]::IsNullOrEmpty($line)) {
-        # Log a warning if the line is empty
         $warningMessage = "WARNING: Empty line at line number $lineNumber"
         $logMessages += $warningMessage
     } elseif ($lineNumber -eq 1) {
         $pattern = $line
     } elseif (Test-IsUrl $line) {
-        # Code ran by an individual job
         $jobs += Start-Job -ScriptBlock {
             param($url, $lineNumber, $pattern)
             $response = Invoke-WebRequest -Uri $url -ErrorAction SilentlyContinue
