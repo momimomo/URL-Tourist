@@ -23,16 +23,13 @@
        .;...  ..',,,'.. .                ;l'..     .';codddxxdl:'.    .                .:...  .',;;,'.  ..         
        .:'......     ......              'o:.....   .............  ....                .:,......     ......        
       ..;;,'...........';:'.             ,ol,...''.................';:,..             ..;:;'...........';:,..      
-   .',,:odxdc,.......,cdxdc;,'..        .;c;,:lodxdc;'..........,:oxxdl;,,'..      .',,:odxdl,.......,cdkxl;,,..   
-..,:;;;lkO0Okdc.   .:dkOOOd:,;;;'      .;:;;;okO000Oxoc.      'ldkOOOOkc,;;::;,..  ';;;cxO00kxl.   .;dkOOOx:,;;:;'.
 
-# _  _ ____ _       ___ ____ _  _ ____ _ ____ ___ 
-# |  | |__/ |        |  |  | |  | |__/ | [__   |  
-# |__| |  \ |___     |  |__| |__| |  \ | ___]  | 
+# URL Tourist
 
 ## It's a Powershell script for checking a list of URLs in search of a regex pattern.
 
 ### Info 
+
 The script is in Powershell 5.1. 
 
 Add file "links.txt" in the same location as the script with the regex pattern on the first line,
